@@ -12,6 +12,7 @@
 		97689E4F1E090D02003F92FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97689E4D1E090D02003F92FF /* Main.storyboard */; };
 		97689E511E090D02003F92FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97689E501E090D02003F92FF /* Assets.xcassets */; };
 		97689E541E090D02003F92FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97689E521E090D02003F92FF /* LaunchScreen.storyboard */; };
+		97D918B41E0A2F4A00BF1BDD /* foodRecordHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D918B31E0A2F4A00BF1BDD /* foodRecordHome.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		97689E501E090D02003F92FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97689E531E090D02003F92FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97689E551E090D02003F92FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97D918B31E0A2F4A00BF1BDD /* foodRecordHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = foodRecordHome.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				97689E491E090D02003F92FF /* AppDelegate.swift */,
 				97689E4B1E090D02003F92FF /* ViewController.swift */,
+				97D918B31E0A2F4A00BF1BDD /* foodRecordHome.swift */,
 				97689E4D1E090D02003F92FF /* Main.storyboard */,
 				97689E501E090D02003F92FF /* Assets.xcassets */,
 				97689E521E090D02003F92FF /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			files = (
 				97689E4C1E090D02003F92FF /* ViewController.swift in Sources */,
 				97689E4A1E090D02003F92FF /* AppDelegate.swift in Sources */,
+				97D918B41E0A2F4A00BF1BDD /* foodRecordHome.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +304,7 @@
 				97689E5A1E090D02003F92FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
