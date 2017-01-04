@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AiO-Qc-qeE">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,17 +18,17 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="fv2-Y5-5JD" kind="relationship" relationship="rootViewController" id="rkP-0X-9uz"/>
+                        <segue destination="fv2-Y5-5JD" kind="relationship" relationship="rootViewController" id="RvO-Fq-btZ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6B-9o-nv1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-341" y="78"/>
+            <point key="canvasLocation" x="-452" y="77"/>
         </scene>
         <!--美食紀錄-->
         <scene sceneID="Yr4-el-ovm">
             <objects>
-                <viewController id="fv2-Y5-5JD" customClass="ViewController" customModule="FoodRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fv2-Y5-5JD" customClass="TableViewController" customModule="FoodRecord" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8PX-ud-aqD"/>
                         <viewControllerLayoutGuide type="bottom" id="cdX-NU-PgZ"/>
@@ -37,18 +37,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t93-0G-fDZ" userLabel="foodTableView">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="CellId" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="83" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t93-0G-fDZ" userLabel="foodTableView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="tbw-xq-da1" userLabel="store">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="83" id="tbw-xq-da1" userLabel="store">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tbw-xq-da1" id="60J-J3-qPt">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="83"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xy9-tR-v3H">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="83"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="店名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CA-aE-RYt">
+                                                    <rect key="frame" x="19" y="20" width="128" height="41"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="DLx-Fj-M5U" kind="show" id="bVv-es-I0z"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -58,22 +74,19 @@
                     <navigationItem key="navigationItem" title="美食紀錄" id="Ukm-Ft-YMp">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="pYf-VW-KQa">
                             <connections>
-                                <segue destination="atD-QD-g0d" kind="show" id="uqZ-tF-AkC"/>
+                                <segue destination="atD-QD-g0d" kind="show" id="aNw-Gb-9vi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="DLx-Fj-M5U" kind="show" id="DJJ-je-6Ce"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nrm-Ar-JZ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="347.82608695652175" y="76.630434782608702"/>
         </scene>
-        <!--New Store-->
+        <!--新增店家-->
         <scene sceneID="Ohi-nv-dbr">
             <objects>
-                <viewController id="atD-QD-g0d" customClass="newStore" customModule="FoodRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newStore" id="atD-QD-g0d" customClass="newStore" customModule="FoodRecord" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dji-Av-heE"/>
                         <viewControllerLayoutGuide type="bottom" id="TFf-Nh-mk4"/>
@@ -82,20 +95,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yc9-NQ-BxL">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="新增店家資料" id="4Kr-dB-CM2">
-                                        <barButtonItem key="backBarButtonItem" title="美食紀錄" id="Kp2-Aa-WdB"/>
-                                        <barButtonItem key="rightBarButtonItem" title="完成" id="ci0-2L-c8V">
-                                            <connections>
-                                                <action selector="finishButton:" destination="atD-QD-g0d" id="I47-fQ-ORe"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="387-iT-fRs">
                                 <rect key="frame" x="20" y="83" width="374" height="267"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -146,6 +145,9 @@
                                 <rect key="frame" x="20" y="371" width="174" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="拍照"/>
+                                <connections>
+                                    <action selector="cameraButton:" destination="atD-QD-g0d" eventType="touchUpInside" id="cZ9-6H-KJY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pX-U1-8Nz">
                                 <rect key="frame" x="219" y="371" width="175" height="47"/>
@@ -154,25 +156,35 @@
                                 <state key="normal" title="相簿">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="photoButton:" destination="atD-QD-g0d" eventType="touchUpInside" id="9bQ-DJ-KFH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99835759400000001" green="0.61386900300000002" blue="0.2458872298" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="新增店家" id="78b-A3-EYd">
+                        <barButtonItem key="rightBarButtonItem" title="完成" id="ysB-Zd-87E">
+                            <connections>
+                                <action selector="finishButton:" destination="atD-QD-g0d" id="ovL-69-KTK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="newAddTextField" destination="rxd-yG-H8z" id="ATV-nN-OK3"/>
-                        <outlet property="newInfoTextField" destination="xEB-ib-Wo6" id="u90-8q-Rw1"/>
-                        <outlet property="newNameTextField" destination="nIk-h5-V4Q" id="0IH-ww-LNM"/>
-                        <outlet property="newStoreImage" destination="387-iT-fRs" id="ncN-Io-z1l"/>
+                        <outlet property="addField" destination="rxd-yG-H8z" id="3VJ-gm-yqY"/>
+                        <outlet property="infoTextView" destination="xEB-ib-Wo6" id="ejs-0q-S4C"/>
+                        <outlet property="nameField" destination="nIk-h5-V4Q" id="pF7-Xj-SX4"/>
+                        <outlet property="newImage" destination="387-iT-fRs" id="xXm-FZ-3P5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RLi-qj-G9E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="347.82608695652175" y="778.53260869565224"/>
         </scene>
-        <!--Store Data-->
+        <!--店家資料-->
         <scene sceneID="Q9P-HJ-jfO">
             <objects>
-                <viewController id="DLx-Fj-M5U" customClass="storeData" customModule="FoodRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="storeData" id="DLx-Fj-M5U" customClass="storeData" customModule="FoodRecord" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WtN-If-Xex"/>
                         <viewControllerLayoutGuide type="bottom" id="EBZ-af-rMz"/>
@@ -181,20 +193,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KCH-wD-Hol">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="店家資料" id="C5D-Pb-8nw">
-                                        <barButtonItem key="backBarButtonItem" title="美食紀錄" id="zXL-cP-DXB"/>
-                                        <barButtonItem key="rightBarButtonItem" title="完成" id="l8v-jd-gfx">
-                                            <connections>
-                                                <segue destination="2j9-OR-YDQ" kind="show" id="zbo-8U-5Iq"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3SN-Yx-1BZ">
                                 <rect key="frame" x="20" y="83" width="374" height="307"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -217,7 +215,7 @@
                                 <rect key="frame" x="87" y="534" width="307" height="182"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -245,15 +243,29 @@
                         </subviews>
                         <color key="backgroundColor" red="0.40226540570000002" green="1" blue="0.29812073160000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="店家資料" id="H1a-by-WvW">
+                        <barButtonItem key="rightBarButtonItem" title="編輯" id="myy-Jh-t87">
+                            <connections>
+                                <action selector="editButton:" destination="DLx-Fj-M5U" id="4EZ-Wz-xFV"/>
+                                <segue destination="2j9-OR-YDQ" kind="show" id="aYH-bQ-06S"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addLabel" destination="5Ss-4z-lxf" id="KkL-6t-EfI"/>
+                        <outlet property="infoLabel" destination="yDd-eS-DSZ" id="1Nj-JN-7fN"/>
+                        <outlet property="nameLabel" destination="PrH-cG-a6M" id="xdw-gL-uwB"/>
+                        <outlet property="picView" destination="3SN-Yx-1BZ" id="irR-6E-zOe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hy9-Bv-Gb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1065.217391304348" y="76.630434782608702"/>
         </scene>
-        <!--Store Data Edit-->
+        <!--編輯資料-->
         <scene sceneID="4ly-KZ-8qA">
             <objects>
-                <viewController id="2j9-OR-YDQ" customClass="storeDataEdit" customModule="FoodRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="storeDataEdit" id="2j9-OR-YDQ" customClass="storeDataEdit" customModule="FoodRecord" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Rad-1L-8dX"/>
                         <viewControllerLayoutGuide type="bottom" id="Gao-oN-Eqg"/>
@@ -262,16 +274,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EFD-jQ-bZA">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="編輯店家資料" id="2Uf-1u-GTo">
-                                        <barButtonItem key="backBarButtonItem" title="店家資料" id="2U5-fp-dm3"/>
-                                        <barButtonItem key="rightBarButtonItem" title="完成" id="lf6-39-v2c"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="owb-0a-naH">
                                 <rect key="frame" x="20" y="83" width="374" height="267"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -315,7 +317,7 @@
                                 <rect key="frame" x="87" y="534" width="307" height="182"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -323,6 +325,9 @@
                                 <rect key="frame" x="20" y="371" width="174" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="拍照"/>
+                                <connections>
+                                    <action selector="editCameraButton:" destination="2j9-OR-YDQ" eventType="touchUpInside" id="uA5-az-9mn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTX-mB-X3H">
                                 <rect key="frame" x="219" y="371" width="175" height="47"/>
@@ -331,10 +336,26 @@
                                 <state key="normal" title="相簿">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="editPhotoButton:" destination="2j9-OR-YDQ" eventType="touchUpInside" id="FWy-lW-Eiw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.9334249496" green="0.48845521920000001" blue="0.90317117629999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="編輯資料" id="2w2-B0-3ln">
+                        <barButtonItem key="rightBarButtonItem" title="完成" id="vYb-HG-cht">
+                            <connections>
+                                <action selector="edifFinishButton:" destination="2j9-OR-YDQ" id="5Ja-JP-diS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="editAddField" destination="tE9-mo-LKf" id="Hfr-c6-Pw1"/>
+                        <outlet property="editImage" destination="owb-0a-naH" id="y7H-Q2-Z1Q"/>
+                        <outlet property="editInfoText" destination="oEu-xq-7nr" id="gYf-oI-PHC"/>
+                        <outlet property="editNameField" destination="5Hu-u1-dwa" id="w73-tD-CQO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ewm-wG-KPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
