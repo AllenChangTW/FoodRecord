@@ -18,12 +18,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="fv2-Y5-5JD" kind="relationship" relationship="rootViewController" id="RvO-Fq-btZ"/>
+                        <segue destination="fv2-Y5-5JD" kind="relationship" relationship="rootViewController" id="tZg-EY-4A2"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6B-9o-nv1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-452" y="77"/>
+            <point key="canvasLocation" x="-401" y="77"/>
         </scene>
         <!--美食紀錄-->
         <scene sceneID="Yr4-el-ovm">
@@ -37,23 +37,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="CellId" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="83" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t93-0G-fDZ" userLabel="foodTableView">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="CellId" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="83" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t93-0G-fDZ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="83" id="tbw-xq-da1" userLabel="store">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellId" rowHeight="83" id="tbw-xq-da1">
                                         <rect key="frame" x="0.0" y="28" width="414" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tbw-xq-da1" id="60J-J3-qPt">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="83"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAS-Gw-6rY">
+                                                    <rect key="frame" x="25" y="31" width="87" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="DLx-Fj-M5U" kind="show" id="bVv-es-I0z"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="fv2-Y5-5JD" id="jeC-Wv-OXF"/>
+                                    <outlet property="delegate" destination="fv2-Y5-5JD" id="xKq-UH-OfG"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -65,10 +75,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="DLx-Fj-M5U" kind="show" identifier="recordToData" id="xfn-xg-Lpz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nrm-Ar-JZ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="347.82608695652175" y="76.630434782608702"/>
+            <point key="canvasLocation" x="346.37681159420293" y="75.815217391304358"/>
         </scene>
         <!--新增店家-->
         <scene sceneID="Ohi-nv-dbr">
@@ -166,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RLi-qj-G9E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="347.82608695652175" y="778.53260869565224"/>
+            <point key="canvasLocation" x="346" y="993"/>
         </scene>
         <!--店家資料-->
         <scene sceneID="Q9P-HJ-jfO">
@@ -234,7 +247,6 @@
                         <barButtonItem key="rightBarButtonItem" title="編輯" id="myy-Jh-t87">
                             <connections>
                                 <action selector="editButton:" destination="DLx-Fj-M5U" id="4EZ-Wz-xFV"/>
-                                <segue destination="2j9-OR-YDQ" kind="show" id="aYH-bQ-06S"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -243,6 +255,7 @@
                         <outlet property="infoLabel" destination="yDd-eS-DSZ" id="1Nj-JN-7fN"/>
                         <outlet property="nameLabel" destination="PrH-cG-a6M" id="xdw-gL-uwB"/>
                         <outlet property="picView" destination="3SN-Yx-1BZ" id="irR-6E-zOe"/>
+                        <segue destination="2j9-OR-YDQ" kind="show" identifier="dataToEdit" id="JPI-vI-MC2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hy9-Bv-Gb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
