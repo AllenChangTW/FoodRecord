@@ -18,70 +18,59 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="fv2-Y5-5JD" kind="relationship" relationship="rootViewController" id="tZg-EY-4A2"/>
+                        <segue destination="Kqr-iA-Xpf" kind="relationship" relationship="rootViewController" id="8Ad-SW-z4X"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6B-9o-nv1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-401" y="77"/>
         </scene>
-        <!--美食紀錄-->
-        <scene sceneID="Yr4-el-ovm">
+        <!--Table View Controller-->
+        <scene sceneID="vdR-1x-CQd">
             <objects>
-                <viewController id="fv2-Y5-5JD" customClass="TableViewController" customModule="FoodRecord" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8PX-ud-aqD"/>
-                        <viewControllerLayoutGuide type="bottom" id="cdX-NU-PgZ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="lt8-x9-qNI">
+                <tableViewController id="Kqr-iA-Xpf" customClass="TableViewController" customModule="FoodRecord" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CellId" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="TiI-ID-JYE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="CellId" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="83" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t93-0G-fDZ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellId" rowHeight="83" id="tbw-xq-da1">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="83"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tbw-xq-da1" id="60J-J3-qPt">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="83"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAS-Gw-6rY">
-                                                    <rect key="frame" x="25" y="31" width="87" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="fv2-Y5-5JD" id="jeC-Wv-OXF"/>
-                                    <outlet property="delegate" destination="fv2-Y5-5JD" id="xKq-UH-OfG"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="美食紀錄" id="Ukm-Ft-YMp">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pYf-VW-KQa">
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId" id="5Py-mG-gje" userLabel="CellId">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Py-mG-gje" id="q5H-aB-2MX">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoS-q2-Jsp">
+                                            <rect key="frame" x="31" y="11" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Kqr-iA-Xpf" id="1f7-d9-Sbi"/>
+                            <outlet property="delegate" destination="Kqr-iA-Xpf" id="icZ-ko-ZD9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="MYh-Pm-59u">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="p48-CY-SAo">
                             <connections>
-                                <segue destination="atD-QD-g0d" kind="show" id="aNw-Gb-9vi"/>
+                                <segue destination="atD-QD-g0d" kind="show" id="PRD-dq-uaP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="DLx-Fj-M5U" kind="show" identifier="recordToData" id="xfn-xg-Lpz"/>
+                        <segue destination="DLx-Fj-M5U" kind="show" id="bIB-1k-rYf"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Nrm-Ar-JZ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0aX-di-kHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="346.37681159420293" y="75.815217391304358"/>
+            <point key="canvasLocation" x="329" y="77"/>
         </scene>
         <!--新增店家-->
         <scene sceneID="Ohi-nv-dbr">
@@ -179,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RLi-qj-G9E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="346" y="993"/>
+            <point key="canvasLocation" x="623" y="784"/>
         </scene>
         <!--店家資料-->
         <scene sceneID="Q9P-HJ-jfO">
