@@ -18,9 +18,18 @@ class newStore: UIViewController ,UIImagePickerControllerDelegate,UINavigationCo
     @IBOutlet weak var infoTextView: UITextView!
 
     @IBAction func finishButton(_ sender: Any) {
-        let dic = ["storeName":self.nameField.text!,"storeAdd":self.addField.text!,"info":self.infoTextView.text!]
-        let notificationName = Notification.Name("addStoreNoti")
-        NotificationCenter.default.post(name: notificationName, object: nil, userInfo: dic)
+        
+        data[number]["storeName"] = nameField.text
+        data[number]["storeAdd"] = addField.text
+        data[number]["info"] = infoTextView.text
+       
+       /* let dic = ["storeName":self.nameField.text!,"storeAdd":self.addField.text!,"info":self.infoTextView.text!]
+       */
+
+        let notificationdata = Notification.Name("addStoreNoti")
+        NotificationCenter.default.post(name: notificationdata, object: nil, userInfo: ["data":data])
+        let notificationNumber = Notification.Name("GetUpdateNoti2")
+        NotificationCenter.default.post(name: notificationNumber, object: nil, userInfo: ["number":number])
         
         self.navigationController?.popViewController(animated: true)
                 
@@ -30,8 +39,8 @@ class newStore: UIViewController ,UIImagePickerControllerDelegate,UINavigationCo
         let fileManager = FileManager.default
         let docUrls = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
         let docUrl = docUrls.first
-        let gatName = name + ".jpg"
-        let url = docUrl?.appendingPathComponent(gatName)
+        let gatName2 = name + ".jpg"
+        let url = docUrl?.appendingPathComponent(gatName2)
         let image = UIImage(contentsOfFile: (url?.path)!)
         return image!
     }
@@ -55,8 +64,8 @@ class newStore: UIViewController ,UIImagePickerControllerDelegate,UINavigationCo
         let fileManager = FileManager.default
         let docUrls = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
         let docUrl = docUrls.first
-        let getdata = self.data[number]["storeName"]
-        let name = "\(getdata!).jpg"
+        let getdata2 = self.data[number]["storeName"]
+        let name = "\(getdata2!).jpg"
         let url = docUrl?.appendingPathComponent(name)
         let data = UIImageJPEGRepresentation(image as! UIImage, 0.9)
         try! data?.write(to: url!)

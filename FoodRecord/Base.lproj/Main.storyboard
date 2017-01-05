@@ -18,14 +18,14 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Kqr-iA-Xpf" kind="relationship" relationship="rootViewController" id="8Ad-SW-z4X"/>
+                        <segue destination="Kqr-iA-Xpf" kind="relationship" relationship="rootViewController" id="K5L-ok-nWb"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6B-9o-nv1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-401" y="77"/>
+            <point key="canvasLocation" x="-777" y="77"/>
         </scene>
-        <!--Table View Controller-->
+        <!--店名-->
         <scene sceneID="vdR-1x-CQd">
             <objects>
                 <tableViewController id="Kqr-iA-Xpf" customClass="TableViewController" customModule="FoodRecord" customModuleProvider="target" sceneMemberID="viewController">
@@ -41,7 +41,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoS-q2-Jsp">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoS-q2-Jsp">
                                             <rect key="frame" x="31" y="11" width="42" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -57,20 +57,20 @@
                             <outlet property="delegate" destination="Kqr-iA-Xpf" id="icZ-ko-ZD9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="MYh-Pm-59u">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="p48-CY-SAo">
+                    <navigationItem key="navigationItem" title="店名" id="MYh-Pm-59u">
+                        <barButtonItem key="rightBarButtonItem" title="新增" id="p48-CY-SAo">
                             <connections>
-                                <segue destination="atD-QD-g0d" kind="show" id="PRD-dq-uaP"/>
+                                <segue destination="atD-QD-g0d" kind="show" identifier="newStore" id="PRD-dq-uaP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="DLx-Fj-M5U" kind="show" id="bIB-1k-rYf"/>
+                        <segue destination="DLx-Fj-M5U" kind="show" identifier="storeData" id="XpN-CW-0Eg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0aX-di-kHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="329" y="77"/>
+            <point key="canvasLocation" x="113" y="77"/>
         </scene>
         <!--新增店家-->
         <scene sceneID="Ohi-nv-dbr">
@@ -168,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RLi-qj-G9E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="623" y="784"/>
+            <point key="canvasLocation" x="329" y="810"/>
         </scene>
         <!--店家資料-->
         <scene sceneID="Q9P-HJ-jfO">
@@ -244,12 +244,12 @@
                         <outlet property="infoLabel" destination="yDd-eS-DSZ" id="1Nj-JN-7fN"/>
                         <outlet property="nameLabel" destination="PrH-cG-a6M" id="xdw-gL-uwB"/>
                         <outlet property="picView" destination="3SN-Yx-1BZ" id="irR-6E-zOe"/>
-                        <segue destination="2j9-OR-YDQ" kind="show" identifier="dataToEdit" id="JPI-vI-MC2"/>
+                        <segue destination="2j9-OR-YDQ" kind="show" identifier="storeData" id="JPI-vI-MC2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hy9-Bv-Gb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1065.217391304348" y="76.630434782608702"/>
+            <point key="canvasLocation" x="975" y="77"/>
         </scene>
         <!--編輯資料-->
         <scene sceneID="4ly-KZ-8qA">

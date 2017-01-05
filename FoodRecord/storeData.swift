@@ -32,7 +32,7 @@ class storeData: UIViewController,UIImagePickerControllerDelegate,UINavigationBa
         
         let notificationData = Notification.Name("GetUpdateNoti")
         NotificationCenter.default.addObserver(self, selector: #selector(storeData.getUpdateNoti(noti:)), name: notificationData, object: nil)
-        let notificationNumber = Notification.Name("GetUpdatenoti2")
+        let notificationNumber = Notification.Name("GetUpdateNoti2")
         NotificationCenter.default.addObserver(self, selector: #selector(storeData.getUpdateNoti2(noti:)), name: notificationNumber, object: nil)
         nameLabel.text = data[number]["storeName"]
         addLabel.text = data[number]["storeAdd"]
@@ -41,8 +41,8 @@ class storeData: UIViewController,UIImagePickerControllerDelegate,UINavigationBa
         let fileManager = FileManager.default
         let docUrls = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
         let docUrl = docUrls.first
-        let getName = data[number]["storeName"]! + ".jpg"
-        let url = docUrl?.appendingPathComponent(getName)
+        let getName1 = data[number]["storeName"]! + ".jpg"
+        let url = docUrl?.appendingPathComponent(getName1)
         let image = UIImage(contentsOfFile: (url?.path)!)
         picView.image = image
     }
@@ -87,8 +87,8 @@ class storeData: UIViewController,UIImagePickerControllerDelegate,UINavigationBa
         let fileManager = FileManager.default
         let docUrls = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
         let docUrl = docUrls.first
-        let gatName = name + ".jpg"
-        let url = docUrl?.appendingPathComponent(gatName)
+        let gatName1 = name + ".jpg"
+        let url = docUrl?.appendingPathComponent(gatName1)
         let image = UIImage(contentsOfFile: (url?.path)!)
         return image!
     }
