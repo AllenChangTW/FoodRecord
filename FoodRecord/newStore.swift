@@ -17,21 +17,25 @@ class newStore: UIViewController ,UIImagePickerControllerDelegate,UINavigationCo
     @IBOutlet weak var addField: UITextField!
     @IBOutlet weak var infoTextView: UITextView!
 
-    @IBAction func finishButton(_ sender: Any) {
+    @IBAction func finishButton(_ sender: AnyObject) {
         
+        /*
         data[number]["storeName"] = nameField.text
         data[number]["storeAdd"] = addField.text
         data[number]["info"] = infoTextView.text
-       
-       /* let dic = ["storeName":self.nameField.text!,"storeAdd":self.addField.text!,"info":self.infoTextView.text!]
        */
+       let dic = ["storeName":self.nameField.text!,"storeAdd":self.addField.text!,"info":self.infoTextView.text!] 
+ 
 
-        let notificationdata = Notification.Name("addStoreNoti")
-        NotificationCenter.default.post(name: notificationdata, object: nil, userInfo: ["data":data])
+        let notificationName = Notification.Name("addStoreNoti")
+        NotificationCenter.default.post(name: notificationName, object: nil, userInfo: dic)
+/*
         let notificationNumber = Notification.Name("GetUpdateNoti2")
         NotificationCenter.default.post(name: notificationNumber, object: nil, userInfo: ["number":number])
-        
+        */
         self.navigationController?.popViewController(animated: true)
+        
+        
                 
     }
     

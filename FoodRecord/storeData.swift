@@ -36,7 +36,7 @@ class storeData: UIViewController,UIImagePickerControllerDelegate,UINavigationBa
         NotificationCenter.default.addObserver(self, selector: #selector(storeData.getUpdateNoti2(noti:)), name: notificationNumber, object: nil)
         nameLabel.text = data[number]["storeName"]
         addLabel.text = data[number]["storeAdd"]
-        infoLabel.text = data[number]["storeinfo"]
+        infoLabel.text = data[number]["info"]
         
         let fileManager = FileManager.default
         let docUrls = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
@@ -93,6 +93,7 @@ class storeData: UIViewController,UIImagePickerControllerDelegate,UINavigationBa
         return image!
     }
     
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         print("info \(info)")
         let image = info[UIImagePickerControllerOriginalImage]
@@ -110,6 +111,18 @@ class storeData: UIViewController,UIImagePickerControllerDelegate,UINavigationBa
         try! data?.write(to: url!)
         self.dismiss(animated: true, completion: nil)
         
+    }
+    
+    //每次畫面現身都被呼叫，但畫面未現身前執行
+    override func viewWillAppear(_ animated: Bool) {
+        
+        let fileManager = FileManager.default
+        let docUrls = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
+        let docUrl = docUrls.first
+        let getName1 = data[number]["storeName"]! + ".jpg"
+        let url = docUrl?.appendingPathComponent(getName1)
+        let image = UIImage(contentsOfFile: (url?.path)!)
+        picView.image = image
     }
     /*
     // MARK: - Navigation

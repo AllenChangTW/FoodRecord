@@ -59,6 +59,11 @@ class TableViewController: UITableViewController {
             controller.data = data
             controller.number = number
         }
+        if segue.identifier == "newStore"{
+            let controller = segue.destination as! newStore
+            controller.data = data
+            controller.number = number
+        }
     }
     
     

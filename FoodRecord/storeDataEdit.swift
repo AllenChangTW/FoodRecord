@@ -78,6 +78,19 @@ class storeDataEdit: UIViewController,UIImagePickerControllerDelegate,UINavigati
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        editNameField.text = data[number]["storeName"]
+        editAddField.text = data[number]["storeAdd"]
+        editInfoText.text = data[number]["info"]
+        
+        let fileManager = FileManager.default
+        let docUrls = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
+        let docUrl = docUrls.first
+        let getName1 = data[number]["storeName"]! + ".jpg"
+        let url = docUrl?.appendingPathComponent(getName1)
+        let image = UIImage(contentsOfFile: (url?.path)!)
+        editImage.image = image
+
         
         self.navigationItem.setHidesBackButton(true, animated: true)
 
