@@ -124,6 +124,8 @@ class storeData: UIViewController,UIImagePickerControllerDelegate,UINavigationBa
         let image = UIImage(contentsOfFile: (url?.path)!)
         picView.image = image
     }
+    
+
     /*
     // MARK: - Navigation
 

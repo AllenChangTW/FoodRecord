@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class newStore: UIViewController ,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class newStore: UIViewController ,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate {
 
     var data:[[String:String]]!
     var number:Int!
@@ -97,6 +97,10 @@ class newStore: UIViewController ,UIImagePickerControllerDelegate,UINavigationCo
         // Dispose of any resources that can be recreated.
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
 
     /*
     // MARK: - Navigation
