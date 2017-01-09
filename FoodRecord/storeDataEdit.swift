@@ -102,11 +102,18 @@ class storeDataEdit: UIViewController,UIImagePickerControllerDelegate,UINavigati
         // Dispose of any resources that can be recreated.
     }
     
+    //收鍵盤，View降下
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
+        textField.resignFirstResponder()
+        UIView.animate(withDuration: 0.4, animations: {self.view.frame.origin.y = 0})
         return true
     }
     
+    //開鍵盤，View上升
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.4, animations: {self.view.frame.origin.y = -220})
+    }
+
 
     /*
     // MARK: - Navigation
