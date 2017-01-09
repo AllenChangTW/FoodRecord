@@ -8,7 +8,7 @@
 
 import UIKit
 
-class storeDataEdit: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate {
+class storeDataEdit: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate,UITextViewDelegate {
     
     var data:[[String:String]]!
     var number:Int!
@@ -102,15 +102,20 @@ class storeDataEdit: UIViewController,UIImagePickerControllerDelegate,UINavigati
         // Dispose of any resources that can be recreated.
     }
     
-    //收鍵盤，View降下
+    // 點textField收鍵盤，View降下
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         UIView.animate(withDuration: 0.4, animations: {self.view.frame.origin.y = 0})
         return true
     }
     
-    //開鍵盤，View上升
+    // 點textField開鍵盤，View上升
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.4, animations: {self.view.frame.origin.y = -220})
+    }
+    
+    // 點textView開鍵盤，View上升
+    func textViewDidBeginEditing(_ textView: UITextView) {
         UIView.animate(withDuration: 0.4, animations: {self.view.frame.origin.y = -220})
     }
 
