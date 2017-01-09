@@ -98,9 +98,14 @@ class newStore: UIViewController ,UIImagePickerControllerDelegate,UINavigationCo
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
+        textField.resignFirstResponder()
+        UIView.animate(withDuration: 0.4, animations: {self.view.frame.origin.y = 0})
         return true
     }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.4, animations: {self.view.frame.origin.y = -220})
+    }
+
 
     /*
     // MARK: - Navigation

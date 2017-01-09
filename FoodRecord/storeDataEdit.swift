@@ -107,7 +107,6 @@ class storeDataEdit: UIViewController,UIImagePickerControllerDelegate,UINavigati
         return true
     }
     
-   
 
     /*
     // MARK: - Navigation

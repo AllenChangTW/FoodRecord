@@ -45,6 +45,10 @@ class storeData: UIViewController,UIImagePickerControllerDelegate,UINavigationBa
         let url = docUrl?.appendingPathComponent(getName1)
         let image = UIImage(contentsOfFile: (url?.path)!)
         picView.image = image
+        
+        
+        //內容是否可選
+        infoLabel.isSelectable = false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
