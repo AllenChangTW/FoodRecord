@@ -120,6 +120,14 @@ class storeData: UIViewController,UIImagePickerControllerDelegate,UINavigationBa
     //每次畫面現身都被呼叫，但畫面未現身前執行
     override func viewWillAppear(_ animated: Bool) {
         
+        let notificationData = Notification.Name("GetUpdateNoti")
+        NotificationCenter.default.addObserver(self, selector: #selector(storeData.getUpdateNoti(noti:)), name: notificationData, object: nil)
+        let notificationNumber = Notification.Name("GetUpdateNoti2")
+        NotificationCenter.default.addObserver(self, selector: #selector(storeData.getUpdateNoti2(noti:)), name: notificationNumber, object: nil)
+        nameLabel.text = data[number]["storeName"]
+        addLabel.text = data[number]["storeAdd"]
+        infoLabel.text = data[number]["info"]
+        
         let fileManager = FileManager.default
         let docUrls = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
         let docUrl = docUrls.first
