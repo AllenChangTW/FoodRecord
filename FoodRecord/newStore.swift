@@ -36,7 +36,9 @@ class newStore: UIViewController ,UIImagePickerControllerDelegate,UINavigationCo
         self.navigationController?.popViewController(animated: true)
         
         
-                
+        //最後一次新增部分，之後再做修正
+        _ = self.number + 1
+        
     }
     
     func loadPicture(name:String)->UIImage{
