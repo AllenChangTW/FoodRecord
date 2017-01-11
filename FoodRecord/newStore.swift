@@ -36,8 +36,8 @@ class newStore: UIViewController ,UIImagePickerControllerDelegate,UINavigationCo
         self.navigationController?.popViewController(animated: true)
         
         
-        //最後一次新增部分，之後再做修正
-        _ = self.number + 1
+      
+        
         
     }
     
@@ -56,6 +56,7 @@ class newStore: UIViewController ,UIImagePickerControllerDelegate,UINavigationCo
         imagePicker.sourceType = .camera
         imagePicker.delegate = self
         self.present(imagePicker, animated: true, completion: nil)
+
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -83,6 +84,7 @@ class newStore: UIViewController ,UIImagePickerControllerDelegate,UINavigationCo
         imagePicker.sourceType = .savedPhotosAlbum
         imagePicker.delegate = self
         self.present(imagePicker, animated: true, completion: nil)
+
     }
     
 

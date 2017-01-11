@@ -47,6 +47,7 @@ class storeDataEdit: UIViewController,UIImagePickerControllerDelegate,UINavigati
         imagePicker.sourceType = .camera
         imagePicker.delegate = self
         self.present(imagePicker, animated: true, completion: nil)
+
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
